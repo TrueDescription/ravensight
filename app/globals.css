@@ -1,33 +1,210 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.market-data {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.main-section {
+  display: flex;
+}
+
+.stock-chart {
+  margin: 20px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+footer div {
+  margin: 10px;
+}
+
+.info-cards {
+  display: flex;
+}
+
+.login-button {
+  margin-right: 5px;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.wrapping_div {
+  font-family: 'Roboto', sans-serif;
 }
+
+.header__navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 99%;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo-title {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header__nav-links {
+  display: flex;
+}
+
+.header__nav-links a {
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 16px;
+}
+
+.header__nav-links a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.main__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.main__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.main__left {
+  flex: 1;
+  text-align: center;
+}
+
+.main__right {
+  flex: 1;
+  border-left:1px solid #000;
+  height:"500px";
+  padding-left:10px;
+}
+
+.heading-primary {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.paragraph-primary {
+  font-size: 16px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+}
+
+/* .text-container {
+  text-align: center;
+} */
+
+.text-container h3{
+  font-size: small;
+}
+
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer base {
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+
+      --primary: 222.2 47.4% 11.2%;
+      --primary-foreground: 210 40% 98%;
+
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 222.2 84% 4.9%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+    }
+  }
+
+  /* @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  } */
